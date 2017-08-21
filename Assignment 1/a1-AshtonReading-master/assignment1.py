@@ -7,19 +7,43 @@ def main():
     print("Songs To Learn 1.0 - by Ashton Reading")
 
     songs_file = open("songs.csv", "r")
-    print("{} songs loaded".format(len(songs_file.readlines())))
+    number_of_songs = len(songs_file.readlines())
+    print("{} songs loaded".format(number_of_songs))
+    songs_file.close()
 
-    print("Menu")
-    print("L - List songs")
-    print("A - Add new song")
-    print("C - Complete a song")
-    print("Q - Quit")
+    songs_file = open("songs.csv", "r")
+    song_master_list = songs_file.readlines()
 
+    print(song_master_list)
+    songs_file.close()
+    print(song_master_list[0])
+
+    song1 = song_master_list[0].split(",")
+
+    print(song1[3])
+
+    song_name, song_artist, song_year, completed = song_master_list[0].split(",")
+    print(song_name, song_artist, song_year, completed)
+
+
+
+
+
+
+    MENU = """
+    Menu:
+    L - List songs
+    A - Add new song
+    C - Complete a song
+    Q - Quit"""
+    print(MENU)
     choice = input(">>> ").upper()
+
     while choice != "Q":
         if choice == "L":
-            song_list = songs_file.readlines()
-            print(song_list)
+            print(song_master_list)
+            print(MENU)
+            choice = input(">>> ").upper()
 
 
 
