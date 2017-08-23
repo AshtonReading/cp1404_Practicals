@@ -28,8 +28,6 @@ def main():
 
 
 
-
-
     MENU = """
     Menu:
     L - List songs
